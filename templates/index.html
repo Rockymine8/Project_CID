@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Can It Run Doom?</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+  <body>
+    <h1>
+      <span class="highlight"><mark>Can It Doom?</mark></span>
+    </h1>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var video = document.querySelector('video');
+        document.addEventListener('click', function() {
+          video.play();
+        });
+      });
+      </script>
+    <video>
+      <source src="{{ url_for('static', filename='videos/doomvid.mp4') }}" type="video/mp4">
+      <p>You're totally missing a cool doom video but to bad your browser can't support it.</p>
+    </video>
+    <form method="POST" action="/result">
+      <label for="device">Enter the name of your device:</label>
+      <input type="text" id="device" name="device">
+      <button type="submit">Check</button>
+    </form>
+  </body>
+</html>
